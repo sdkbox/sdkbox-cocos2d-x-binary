@@ -20,6 +20,35 @@ void CC_DLL log(const char * format, ...);
 ~~~
 
 
+### cocos/base/CCConsole.cpp
+
+from:
+
+~~~cpp
+void log(const char * format, ...)
+{
+    va_list args;
+    va_start(args, format);
+    _log(format, args);
+    va_end(args);
+}
+~~~
+
+to:
+
+~~~cpp
+#if (CC_TARGET_PLATFORM != CC_PLATFORM_IOS)
+void log(const char * format, ...)
+{
+    va_list args;
+    va_start(args, format);
+    _log(format, args);
+    va_end(args);
+}
+#endif
+~~~
+
+
 ### platform/ios/CCCommon-ios.mm
 
 add:
@@ -33,3 +62,28 @@ void log(const char * format, ...)
     va_end(args);
 }
 ~~~
+
+<br/>
+
+# install and run iOS app on device
+
+~~~bash
+set PROJECT_NAME=facebook_cpp
+set CONFIGURATION=Debug
+
+# choose language
+cd cpp
+
+# build
+xcodebuild -target $PROJECT_NAME-mobile \
+    -configuration $CONFIGURATION \
+    -project proj.ios_mac/$PROJECT_NAME.xcodeproj
+
+# install and run .app on device
+ios-deploy --noninteractive --debug \
+    --bundle proj.ios_mac/build/$CONFIGURATION-iphoneos/$PROJECT_NAME-mobile.app
+~~~
+
+- ios-deploy: [https://github.com/phonegap/ios-deploy](https://github.com/phonegap/ios-deploy)
+- build it, copy `ios-deploy` to `/usr/local/bin`
+
