@@ -44,7 +44,13 @@ function buildAndroid()
     echo ""
     echo ""
 
-    ls -l bin/debug/android
+    if [ "$PROJECT_LANG" == "cpp" ]; then
+        APK_OUTPUT_DIR=bin/debug/android
+    else
+        APK_OUTPUT_DIR=simulator/android
+    fi
+
+    ls -lh $APK_OUTPUT_DIR
 
     echo ""
     echo ""
@@ -54,14 +60,25 @@ function runAndroid()
 {
     echo -e "\033[33mInstall and run on Android device\033[0m"
 
-    # adb wait-for-device
-    adb install -rtdg bin/debug/android/${PROJECT_NAME}-debug.apk
+    if [ "$PROJECT_LANG" == "cpp" ]; then
+        APK_OUTPUT_DIR=bin/debug/android
+    else
+        APK_OUTPUT_DIR=simulator/android
+    fi
+
+    adb wait-for-device
+    adb install -rtdg ${APK_OUTPUT_DIR}/${PROJECT_NAME}_${PROJECT_LANG}-debug.apk
 
     echo ""
     echo ""
+
+    PACKAGE_SUFFIX=$PROJECT_LANG
+    if [ "$PROJECT_LANG" == "js" ]; then
+        PACKAGE_SUFFIX=javascript
+    fi
 
     PACKAGE_NAME=com.sdkbox.sample.${PROJECT_NAME}.${PROJECT_LANG}
-    adb shell am start -n ${PACKAGE_NAME}/org.cocos2dx.cpp.AppActivity |
+    adb shell am start -n ${PACKAGE_NAME}/org.cocos2dx.${PACKAGE_SUFFIX}.AppActivity |
     {
         ERROR=0
         while read line
