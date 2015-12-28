@@ -1,28 +1,18 @@
 {
       "do_default":{
          "exclude_from_template":[
-            "frameworks/runtime-src",
-            "res-landscape",
-            "res-portrait"
+            "frameworks/runtime-src"
          ],
-         "append_from_template": {
-            "from": "res-landscape",
-            "to": ""
-         },
          "project_rename": {
             "src_project_name": "HelloJavascript",
             "files": [
-               "PROJECT_NAME.ccs",
-               "PROJECT_NAME.cfg",
-               "PROJECT_NAME.udf"
             ]
          },
          "project_replace_project_name":{
             "src_project_name":"HelloJavascript",
             "files":[
                   "config.json",
-                  ".project",
-                  "PROJECT_NAME.ccs"
+                  ".project"
                ]
             },
          "append_dir":[
@@ -32,10 +22,6 @@
                "include": [
                   "*.js"
                ]
-            },
-            {
-                "from": "web",
-                "to": "frameworks/cocos2d-html5"
             }
          ]
       },
@@ -47,35 +33,12 @@
                "proj.android/bin",
                "proj.android/assets",
                "proj.ios_mac/HelloJavascript.xcodeproj/project.xcworkspace",
-               "proj.ios_mac/HelloJavascript.xcodeproj/xcuserdata",
-               "proj.win32/Debug.win32",
-               "proj.win32/Release.win32",
-               "proj.win32/HelloJavascript.sdf"
+               "proj.ios_mac/HelloJavascript.xcodeproj/xcuserdata"
             ]
          },
-         "append_dir":[
-            {
-               "from":"tools/bindings-generator",
-               "to":"tools/bindings-generator",
-               "exclude":[
-                  ".git"
-               ]
-             },
-             {
-                "from":"tools",
-                "to":"tools",
-                "include":[
-                   "tojs"
-                ]
-             }
-         ],
          "project_rename":{
             "src_project_name":"HelloJavascript",
             "files":[
-               "frameworks/runtime-src/proj.win32/PROJECT_NAME.vcxproj",
-               "frameworks/runtime-src/proj.win32/PROJECT_NAME.vcxproj.filters",
-               "frameworks/runtime-src/proj.win32/PROJECT_NAME.vcxproj.user",
-               "frameworks/runtime-src/proj.win32/PROJECT_NAME.sln",
                "frameworks/runtime-src/proj.ios_mac/PROJECT_NAME.xcodeproj"
             ]
          },
@@ -84,18 +47,12 @@
             "files":[
                "config.json",
                ".project",
-               "frameworks/runtime-src/proj.win32/PROJECT_NAME.vcxproj",
-               "frameworks/runtime-src/proj.win32/PROJECT_NAME.vcxproj.filters",
-               "frameworks/runtime-src/proj.win32/PROJECT_NAME.vcxproj.user",
-               "frameworks/runtime-src/proj.win32/PROJECT_NAME.sln",
-               "frameworks/runtime-src/proj.win32/main.cpp",
                "frameworks/runtime-src/proj.android/.project",
                "frameworks/runtime-src/proj.android/AndroidManifest.xml",
                "frameworks/runtime-src/proj.android/build.xml",
                "frameworks/runtime-src/proj.android/res/values/strings.xml",
                "frameworks/runtime-src/proj.ios_mac/ios/main.m",
                "frameworks/runtime-src/proj.ios_mac/ios/Prefix.pch",
-               "frameworks/runtime-src/proj.ios_mac/mac/SimulatorApp.mm",
                "frameworks/runtime-src/proj.ios_mac/PROJECT_NAME.xcodeproj/project.pbxproj",
                "frameworks/runtime-src/Classes/AppDelegate.cpp"
             ]
@@ -106,12 +63,6 @@
                "frameworks/runtime-src/proj.android/AndroidManifest.xml"
             ]
          },
-         "project_replace_mac_bundleid":{
-            "src_bundle_id":"org.cocos2dx.hellojavascript",
-            "files":[
-               "frameworks/runtime-src/proj.ios_mac/mac/Info.plist"
-            ]
-         },
          "project_replace_ios_bundleid":{
             "src_bundle_id":"org.cocos2dx.hellojavascript",
             "files":[
@@ -120,10 +71,6 @@
          }
       },
       "change_orientation": {
-         "append_from_template": {
-            "from": "res-portrait",
-            "to": ""
-         },
          "modify_files": [
             {
                "file_path": "config.json",
@@ -154,15 +101,11 @@
          "project_rename":{
             "src_project_name":"HelloJavascript",
             "files":[
-               "PROJECT_NAME.ccs",
-               "PROJECT_NAME.cfg",
-               "PROJECT_NAME.udf"
             ]
          },
          "project_replace_project_name":{
             "src_project_name":"HelloJavascript",
             "files":[
-               "PROJECT_NAME.ccs"
             ]
          }
       }
