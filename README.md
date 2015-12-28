@@ -9,16 +9,15 @@ cd samples
 git clone https://github.com/sdkbox/sdkbox-cocos2d-x-3.9-binary.git
 git clone https://github.com/sdkbox/sdkbox-sample-facebook.git
 
-./cocos2d-x-3.9/run_sample.sh ios facebook cpp
+./sdkbox-cocos2d-x-3.9-binary/run_sample.sh ios facebook cpp
 ~~~
 
 Memo:
 
-1.  Cocos files must be in a directory named 'cocos2d-x-3.9'
-2.  All sample projects must be in same level directories
+1.  All sample projects must be in same level directories
 
 ~~~
-+-- cocos2d-x-3.9
++-- sdkbox-cocos2d-x-3.9-binary
 +-- sdkbox-sample-facebook
 | +-- cpp
 | +-- lua
