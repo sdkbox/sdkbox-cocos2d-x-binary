@@ -1,10 +1,20 @@
 #!/bin/bash
-COCOS_ROOT_DIR=$(cd "$(dirname $0)" && pwd)
-cd $COCOS_ROOT_DIR
+CUR_DIR=$(cd "$(dirname $0)" && pwd)
+source "$CUR_DIR"/sample_func.sh
 
-echo -e "\033[33mCOCOS_ROOT_DIR\033[0m"
-pwd
-echo ""
+function cleanup()
+{
+    cd "$SAMPLE_ROOT_DIR"
+    git cleanup -dfx
+    git reset --hard master
+}
+
+function sdkboxUpdate()
+{
+    cd "$SAMPLE_ROOT_DIR"
+    cd $PROJECT_LANG
+    sdkbox update
+}
 
 function buildIOS()
 {
@@ -132,11 +142,6 @@ PLATFORM=$1
 PROJECT_NAME=$2
 PROJECT_LANG=$3
 
-cd ..
-
-WORKING_DIR=`pwd`
-echo -e "\033[33mWORKING_DIR\033[0m"
-echo $WORKING_DIR
 echo ""
 
 SAMPLE_ROOT_DIR=${WORKING_DIR}/sdkbox-sample-${PROJECT_NAME}
