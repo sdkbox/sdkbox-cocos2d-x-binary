@@ -4,11 +4,11 @@ source "$CUR_DIR"/sample_func.sh
 
 function help()
 {
-    echo "run_sample.sh PLATFORM PROJECT_NAME PROJECT_LANG"
+    echo "run_sample.sh PROJECT_NAME PROJECT_LANG PLATFORM"
     echo ""
     echo "examples:"
-    echo "    run_sample.sh ios facebook lua"
-    echo "    run_sample.sh android facebook cpp"
+    echo "    run_sample.sh facebook lua ios"
+    echo "    run_sample.sh facebook cpp android"
     echo ""
 }
 
@@ -19,9 +19,9 @@ if [ "$3" == "" ]; then
     exit
 fi
 
-PLATFORM=$1
-PROJECT_NAME=$2
-PROJECT_LANG=$3
+PROJECT_NAME=$1
+PROJECT_LANG=$2
+PLATFORM=$3
 
 echo ""
 

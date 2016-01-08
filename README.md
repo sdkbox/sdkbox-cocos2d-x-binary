@@ -9,7 +9,7 @@ cd samples
 git clone https://github.com/sdkbox/sdkbox-cocos2d-x-3.9-binary.git
 git clone https://github.com/sdkbox/sdkbox-sample-facebook.git
 
-./sdkbox-cocos2d-x-3.9-binary/run_sample.sh ios facebook cpp
+./sdkbox-cocos2d-x-3.9-binary/run_sample.sh facebook cpp ios
 ~~~
 
 Memo:

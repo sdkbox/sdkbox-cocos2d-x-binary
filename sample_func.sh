@@ -86,7 +86,10 @@ function runAndroid()
         APK_OUTPUT_DIR=simulator/android
     fi
 
+    PACKAGE_NAME=com.sdkbox.sample.${PROJECT_NAME}.${PROJECT_LANG}
+
     adb wait-for-device
+    adb uninstall ${PACKAGE_NAME}
     adb install -rtdg ${APK_OUTPUT_DIR}/${PROJECT_NAME}_${PROJECT_LANG}-debug.apk
 
     echo ""
@@ -97,7 +100,6 @@ function runAndroid()
         PACKAGE_SUFFIX=javascript
     fi
 
-    PACKAGE_NAME=com.sdkbox.sample.${PROJECT_NAME}.${PROJECT_LANG}
     adb shell am start -n ${PACKAGE_NAME}/org.cocos2dx.${PACKAGE_SUFFIX}.AppActivity |
     {
         ERROR=0
