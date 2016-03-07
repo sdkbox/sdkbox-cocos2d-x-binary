@@ -27,12 +27,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::createWithRect("facebook", Rect(0, 0, 960, 640));
+        glview = GLViewImpl::createWithRect("HelloCpp", Rect(0, 0, 960, 640));
         director->setOpenGLView(glview);
     }
 
-    auto framesize = director->getOpenGLView()->getFrameSize();
-    director->getOpenGLView()->setDesignResolutionSize(framesize.width, framesize.height, ResolutionPolicy::SHOW_ALL);
+    director->getOpenGLView()->setDesignResolutionSize(960, 640, ResolutionPolicy::SHOW_ALL);
 
     // turn on display FPS
     director->setDisplayStats(true);

@@ -23,7 +23,7 @@
     // "frameRate" set the wanted frame rate for your game, but the real fps depends on your game implementation and the running environment.
 
     "noCache"       : false,
-    // Set "noCache" to true can make the loader ignoring the html page cache while loading your resources, 
+    // Set "noCache" to true can make the loader ignoring the html page cache while loading your resources,
     // especially useful in Android web browsers.
 
     "id"            : "gameCanvas",
@@ -60,8 +60,7 @@ cc.game.onStart = function(){
     // Adjust viewport meta
     cc.view.adjustViewPort(true);
     // Setup the resolution policy and design resolution size
-    var size = cc.winSize;
-    cc.view.setDesignResolutionSize(size.width, size.height, cc.ResolutionPolicy.SHOW_ALL);
+    cc.view.setDesignResolutionSize(960, 640, cc.ResolutionPolicy.SHOW_ALL);
     // Instead of set design resolution, you can also set the real pixel resolution size
     // Uncomment the following line and delete the previous line.
     // cc.view.setRealPixelResolution(960, 640, cc.ResolutionPolicy.SHOW_ALL);
