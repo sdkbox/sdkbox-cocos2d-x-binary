@@ -3,6 +3,7 @@ COCOS_ROOT_DIR=$(cd "$(dirname $0)" && pwd)
 cd $COCOS_ROOT_DIR
 cd ..
 WORKING_DIR=`pwd`
+COCOS_BIN=$COCOS_ROOT_DIR/tools/cocos2d-console/bin/cocos
 
 echo -e "\033[33mCOCOS_ROOT_DIR\033[0m"
 echo $COCOS_ROOT_DIR
@@ -59,7 +60,7 @@ function buildAndroid()
 {
     echo -e "\033[33mBuild for Android\033[0m"
 
-    cocos compile -m debug -p android
+    $COCOS_BIN compile -m debug -p android
 
     echo ""
     echo ""
