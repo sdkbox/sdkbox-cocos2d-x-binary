@@ -87,7 +87,9 @@ function runAndroid()
         APK_OUTPUT_DIR=simulator/android
     fi
 
-    PACKAGE_NAME=com.sdkbox.sample.${PROJECT_NAME}.${PROJECT_LANG}
+    if [ "$PACKAGE_NAME" == "" ]; then
+        PACKAGE_NAME="com.sdkbox.sample.${PROJECT_NAME}.${PROJECT_LANG}"
+    fi
 
     adb wait-for-device
     adb uninstall ${PACKAGE_NAME}

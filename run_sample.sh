@@ -4,7 +4,7 @@ source "$CUR_DIR"/sample_func.sh
 
 function help()
 {
-    echo "run_sample.sh PROJECT_NAME PROJECT_LANG PLATFORM"
+    echo "run_sample.sh PROJECT_NAME PROJECT_LANG PLATFORM [PACKAGE_NAME]"
     echo ""
     echo "examples:"
     echo "    run_sample.sh facebook lua ios"
@@ -22,6 +22,7 @@ fi
 PROJECT_NAME=$1
 PROJECT_LANG=$2
 PLATFORM=$3
+PACKAGE_NAME=$4
 
 echo ""
 
