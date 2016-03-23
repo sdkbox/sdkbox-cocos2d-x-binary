@@ -22,7 +22,17 @@ fi
 PROJECT_NAME=$1
 PROJECT_LANG=$2
 PLATFORM=$3
-PACKAGE_NAME=$4
+
+PACKAGE_NAME=
+UPDATE=
+
+if [ "$4" == "--update" ]; then
+    UPDATE='--update'
+elif [ "$4" == "--update-staging" ]; then
+    UPDATE='--update-staging'
+else
+    PACKAGE_NAME="$4"
+fi
 
 echo ""
 
@@ -50,6 +60,16 @@ pwd
 cd $PROJECT_LANG
 pwd
 echo ""
+
+if [ "$UPDATE" == "--update" ]; then
+    cleanupSample
+    updateSample
+fi
+
+if [ "$UPDATE" == "--update-staging" ]; then
+    cleanupSample
+    updateStagingSample
+fi
 
 if [ "$PLATFORM" == "ios" ]; then
     buildIOS

@@ -16,8 +16,9 @@ echo ""
 function cleanupSample()
 {
     cd "$SAMPLE_ROOT_DIR"
-    git cleanup -dfx
     git reset --hard master
+    git clean -dfx
+    git pull origin master
 }
 
 function updateSample()
@@ -25,6 +26,13 @@ function updateSample()
     cd "$SAMPLE_ROOT_DIR"
     cd $PROJECT_LANG
     sdkbox update
+}
+
+function updateStagingSample()
+{
+    cd "$SAMPLE_ROOT_DIR"
+    cd $PROJECT_LANG
+    sdkbox update --staging
 }
 
 function buildIOS()
