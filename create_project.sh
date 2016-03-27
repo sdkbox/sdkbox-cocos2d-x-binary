@@ -98,8 +98,6 @@ find libs -type d | grep "gen" | xargs rm -f $1
 # git
 cd "$PROJECT_DIR"
 git init .
-git config user.name tinybearc
-git config user.email tinybearc@gmail.com
 git config credential.https://github.com/sdkbox/sdkbox-sample-${PROJECT_NAME}.git tinybearc
 
 git add -f .
