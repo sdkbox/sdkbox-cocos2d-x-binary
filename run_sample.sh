@@ -25,6 +25,7 @@ PLATFORM=$3
 
 PACKAGE_NAME=
 UPDATE=
+COMPILE_ONLY=
 
 if [ "$4" == "--update" ]; then
     UPDATE='--update'
@@ -35,6 +36,10 @@ else
 fi
 
 echo ""
+
+if [ "$5" == "--compile-only" ]; then
+    COMPILE_ONLY='--compile-only'
+fi
 
 SAMPLE_ROOT_DIR=${WORKING_DIR}/sdkbox-sample-${PROJECT_NAME}
 
@@ -73,8 +78,13 @@ fi
 
 if [ "$PLATFORM" == "ios" ]; then
     buildIOS
-    runIOS
+    if [ "$COMPILE_ONLY" != "--compile-only" ]; then
+        runIOS
+    fi
 elif [ "$PLATFORM" == "android" ]; then
     buildAndroid
-    runAndroid
+    if [ "$COMPILE_ONLY" != "--compile-only" ]; then
+        runAndroid
+    fi
 fi
+
