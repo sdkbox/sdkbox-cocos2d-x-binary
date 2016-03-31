@@ -46,6 +46,8 @@ def main(argv):
     langs = ['cpp', 'js', 'lua']
 
     for p in platforms:
+        if plugin == 'playphone' and p == 'ios':
+            continue
         for l in langs:
             if build(plugin, l, p) != 0:
                 return 1
