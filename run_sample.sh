@@ -29,23 +29,39 @@ PROJECT_NAME=$1
 PROJECT_LANG=$2
 PLATFORM=$3
 
-PACKAGE_NAME=
-UPDATE=
+PACKAGE_NAME=""
+UPDATE=""
+COMPILE_ONLY=
 RESET=
 
-if [ "$4" == "--update" ]; then
-    UPDATE='--update'
-    PACKAGE_NAME=$5
-elif [ "$4" == "--update-staging" ]; then
-    UPDATE='--update-staging'
-    PACKAGE_NAME=$5
-elif [ "$4" == "--reset" ]; then
-    RESET=1
-    PACKAGE_NAME=$5
-else
-    PACKAGE_NAME=$4
+while [ "$4" != "" ]; do
+    if [ "$4" == "--update" ]; then
+        UPDATE='--update'
+    elif [ "$4" == "--update-staging" ]; then
+        UPDATE='--update-staging'
+    elif [ "$4" == "--reset" ]; then
+        RESET="--reset"
+    elif [ "$4" == "--compile-only" ]; then
+        COMPILE_ONLY="--compile-only"
+    else
+        PACKAGE_NAME=$4
+    fi
+
+    shift
+done
+
+if [ "$PACKAGE_NAME" == "" ]; then
+    PACKAGE_NAME="com.sdkbox.sample.${PROJECT_NAME}.${PROJECT_LANG}"
 fi
 
+echo "PROJECT_NAME = $PROJECT_NAME"
+echo "PROJECT_LANG = $PROJECT_LANG"
+echo "PLATFORM     = $PLATFORM"
+echo "PACKAGE_NAME = $PACKAGE_NAME"
+echo "UPDATE       = $UPDATE"
+echo "COMPILE_ONLY = $COMPILE_ONLY"
+echo "RESET        = $RESET"
+echo ""
 echo ""
 
 SAMPLE_ROOT_DIR=${WORKING_DIR}/sdkbox-sample-${PROJECT_NAME}
@@ -83,14 +99,19 @@ if [ "$UPDATE" == "--update-staging" ]; then
     updateStagingSample
 fi
 
-if [ "$RESET" == "1" ]; then
+if [ "$RESET" == "--reset" ]; then
     cleanupSample
 fi
 
 if [ "$PLATFORM" == "ios" ]; then
     buildIOS
-    runIOS
+    if [ "$COMPILE_ONLY" != "--compile-only" ]; then
+        runIOS
+    fi
 elif [ "$PLATFORM" == "android" ]; then
     buildAndroid
-    runAndroid
+    if [ "$COMPILE_ONLY" != "--compile-only" ]; then
+        runAndroid
+    fi
 fi
+
