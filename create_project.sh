@@ -7,7 +7,7 @@ if [ "$1" == "" ]; then
 	exit
 fi
 
-PARENT_DIR=$(cd .. && pwd)
+PARENT_DIR=$(pwd)
 COCOS_BIN=${CUR_DIR}/tools/cocos2d-console/bin/cocos
 SDKBOX_BIN=${PARENT_DIR}/sdkbox-installer/sdkbox
 
