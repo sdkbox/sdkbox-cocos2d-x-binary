@@ -4,11 +4,17 @@ source "$CUR_DIR"/sample_func.sh
 
 function help()
 {
-    echo "run_sample.sh PROJECT_NAME PROJECT_LANG PLATFORM [PACKAGE_NAME]"
+    echo "run_sample.sh PROJECT_NAME PROJECT_LANG PLATFORM [options] [PACKAGE_NAME]"
+    echo ""
+    echo "options:"
+    echo "    --reset cleanup project"
+    echo "    --update run sdkbox update"
+    echo "    --update-staging run sdkbox update --staging"
     echo ""
     echo "examples:"
     echo "    run_sample.sh facebook lua ios"
-    echo "    run_sample.sh facebook cpp android"
+    echo "    run_sample.sh appodeal cpp android org.cocos2dx.appodeal"
+    echo "    run_sample.sh appodeal cpp android --reset-staging org.cocos2dx.appodeal"
     echo ""
 }
 
@@ -25,13 +31,19 @@ PLATFORM=$3
 
 PACKAGE_NAME=
 UPDATE=
+RESET=
 
 if [ "$4" == "--update" ]; then
     UPDATE='--update'
+    PACKAGE_NAME=$5
 elif [ "$4" == "--update-staging" ]; then
     UPDATE='--update-staging'
+    PACKAGE_NAME=$5
+elif [ "$4" == "--reset" ]; then
+    RESET=1
+    PACKAGE_NAME=$5
 else
-    PACKAGE_NAME="$4"
+    PACKAGE_NAME=$4
 fi
 
 echo ""
@@ -69,6 +81,10 @@ fi
 if [ "$UPDATE" == "--update-staging" ]; then
     cleanupSample
     updateStagingSample
+fi
+
+if [ "$RESET" == "1" ]; then
+    cleanupSample
 fi
 
 if [ "$PLATFORM" == "ios" ]; then
