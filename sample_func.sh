@@ -37,6 +37,7 @@ function updateStagingSample()
 
 function buildIOS()
 {
+    cd "$SAMPLE_ROOT_DIR/$PROJECT_LANG"
     echo -e "\033[33mBuild for iOS\033[0m"
 
     if [ "$PROJECT_LANG" == "cpp" ]; then
@@ -66,6 +67,7 @@ function runIOS()
 
 function buildAndroid()
 {
+    cd "$SAMPLE_ROOT_DIR/$PROJECT_LANG"
     echo -e "\033[33mBuild for Android\033[0m"
 
     $COCOS_BIN compile -m debug -p android
@@ -93,10 +95,6 @@ function runAndroid()
         APK_OUTPUT_DIR=bin/debug/android
     else
         APK_OUTPUT_DIR=simulator/android
-    fi
-
-    if [ "$PACKAGE_NAME" == "" ]; then
-        PACKAGE_NAME="com.sdkbox.sample.${PROJECT_NAME}.${PROJECT_LANG}"
     fi
 
     adb wait-for-device
