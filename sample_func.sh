@@ -18,7 +18,7 @@ function cleanupSample()
     cd "$SAMPLE_ROOT_DIR"
     git reset --hard
     git clean -dfx
-    git pull origin
+    git pull origin master
 }
 
 function updateSample()
