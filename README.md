@@ -1,3 +1,18 @@
+# How to create sdkbox sample
+
+Steps:
+
+~~~bash
+mkdir samples
+cd samples
+
+# must clone this repo
+git clone --depth 1 https://github.com/sdkbox/sdkbox-cocos2d-x-binary.git
+
+# create facebook sample
+./sdkbox-cocos2d-x-binary/create_project.sh facebook
+~~~
+
 # How to run sdkbox samples
 
 Steps:
