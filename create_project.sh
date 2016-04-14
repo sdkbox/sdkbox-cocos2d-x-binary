@@ -7,7 +7,7 @@ if [ "$1" == "" ]; then
 	exit
 fi
 
-PARENT_DIR=$(pwd)
+PARENT_DIR="$CUR_DIR/.."
 COCOS_BIN=${CUR_DIR}/tools/cocos2d-console/bin/cocos
 SDKBOX_BIN=${PARENT_DIR}/sdkbox-installer/sdkbox
 
@@ -102,6 +102,9 @@ git config credential.https://github.com/sdkbox/sdkbox-sample-${PROJECT_NAME}.gi
 
 git add -f .
 sed s/PLUGIN/${PLUGIN_NAME}/ < ${CUR_DIR}/gitignore_tpl > .gitignore
+sed s/PLUGIN/${PLUGIN_NAME}/ < ${CUR_DIR}/run_tpl > run.sh
+sed s/PLUGIN/${PLUGIN_NAME}/ < ${CUR_DIR}/readme_tpl > README.md
+cp -v ${CUR_DIR}/setup_tpl setup
 git add -f .gitignore
 git commit -m "init import"
 git remote add origin https://github.com/sdkbox/sdkbox-sample-${PROJECT_NAME}.git
