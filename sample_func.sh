@@ -16,7 +16,7 @@ echo ""
 function cleanupSample()
 {
     cd "$SAMPLE_ROOT_DIR"
-    git reset --hard master
+    git reset --hard
     git clean -dfx
     git pull origin master
 }

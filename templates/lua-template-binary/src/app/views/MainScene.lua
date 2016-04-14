@@ -18,25 +18,29 @@ function MainScene:onCreate()
 end
 
 function MainScene:setupTestMenu()
+    local menu = cc.Menu:create()
+
     local label1 = cc.Label:createWithSystemFont("Test Item 1", "sans", 28)
     local item1 = cc.MenuItemLabel:create(label1)
     item1:onClicked(function()
         print("Test Item 1")
     end)
+    menu:addChild(item1)
 
     local label2 = cc.Label:createWithSystemFont("Test Item 2", "sans", 28)
     local item2 = cc.MenuItemLabel:create(label2)
     item2:onClicked(function()
         print("Test Item 2")
     end)
+    menu:addChild(item2)
 
     local label3 = cc.Label:createWithSystemFont("Test Item 3", "sans", 28)
     local item3 = cc.MenuItemLabel:create(label3)
     item3:onClicked(function()
         print("Test Item 3")
     end)
+    menu:addChild(item3)
 
-    local menu = cc.Menu:create(item1, item2, item3)
     menu:alignItemsVerticallyWithPadding(24)
     self:addChild(menu)
 end
