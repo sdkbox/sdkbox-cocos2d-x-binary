@@ -25,14 +25,14 @@ function updateSample()
 {
     cd "$SAMPLE_ROOT_DIR"
     cd $PROJECT_LANG
-    sdkbox update
+    sdkbox update --nohelp
 }
 
 function updateStagingSample()
 {
     cd "$SAMPLE_ROOT_DIR"
     cd $PROJECT_LANG
-    sdkbox update --staging
+    sdkbox update --staging --nohelp
 }
 
 function buildIOS()
