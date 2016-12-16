@@ -138,3 +138,18 @@ ios-deploy --noninteractive --debug \
 - ios-deploy: [https://github.com/phonegap/ios-deploy](https://github.com/phonegap/ios-deploy)
 - build it, copy `ios-deploy` to `/usr/local/bin`
 
+# Windows
+
+run
+
+```
+python fix_win.py
+```
+
+before you compile any sdkbox-sample. Otherwise you will get error:
+
+```
+libcocos2d.a:1:1: syntax error, unexpected '!', expecting $end
+...
+libcocos2d.a: not an object or archivecollect2.exe: error: ld returned 1 exit status
+```
