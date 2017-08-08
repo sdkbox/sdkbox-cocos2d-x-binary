@@ -70,7 +70,7 @@ function buildAndroid()
     cd "$SAMPLE_ROOT_DIR/$PROJECT_LANG"
     echo -e "\033[33mBuild for Android\033[0m"
 
-    $COCOS_BIN compile -m debug -p android
+    $COCOS_BIN compile -m debug -p android --app-abi armeabi
 
     echo ""
     echo ""
