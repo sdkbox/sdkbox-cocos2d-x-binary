@@ -9,6 +9,9 @@ cd samples
 # must clone this repo
 git clone --depth 1 https://github.com/sdkbox/sdkbox-cocos2d-x-binary.git
 
+# unzip the large lib >= 100M (libcocos2d\ iOS.a)
+unzip prebuilt/ios/libcocos2d\ iOS.a.zip -d prebuilt/ios/
+
 # create facebook sample
 ./sdkbox-cocos2d-x-binary/create_project.sh facebook
 ~~~
