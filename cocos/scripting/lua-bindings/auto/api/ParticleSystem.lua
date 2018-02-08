@@ -130,7 +130,7 @@
 -- @return ParticleSystem#ParticleSystem self (return value: cc.ParticleSystem)
         
 --------------------------------
---  Gets the gravity.<br>
+--  Gets the garvity.<br>
 -- return The gravity.
 -- @function [parent=#ParticleSystem] getGravity 
 -- @param self
@@ -198,13 +198,6 @@
         
 --------------------------------
 -- 
--- @function [parent=#ParticleSystem] addParticles 
--- @param self
--- @param #int count
--- @return ParticleSystem#ParticleSystem self (return value: cc.ParticleSystem)
-        
---------------------------------
--- 
 -- @function [parent=#ParticleSystem] setTexture 
 -- @param self
 -- @param #cc.Texture2D texture
@@ -218,7 +211,7 @@
 -- @return vec2_table#vec2_table ret (return value: vec2_table)
         
 --------------------------------
---  Call the update method with no time..
+--  Call the update mathod with no time..
 -- @function [parent=#ParticleSystem] updateWithNoTime 
 -- @param self
 -- @return ParticleSystem#ParticleSystem self (return value: cc.ParticleSystem)
@@ -247,7 +240,7 @@
 -- @return ParticleSystem#ParticleSystem self (return value: cc.ParticleSystem)
         
 --------------------------------
--- 
+--  Stop emitting particles. Running particles will continue to run until they die.
 -- @function [parent=#ParticleSystem] stopSystem 
 -- @param self
 -- @return ParticleSystem#ParticleSystem self (return value: cc.ParticleSystem)
@@ -408,13 +401,6 @@
 -- @function [parent=#ParticleSystem] setSourcePosition 
 -- @param self
 -- @param #vec2_table pos
--- @return ParticleSystem#ParticleSystem self (return value: cc.ParticleSystem)
-        
---------------------------------
---  Update the verts position data of particle,<br>
--- should be overridden by subclasses. 
--- @function [parent=#ParticleSystem] updateParticleQuads 
--- @param self
 -- @return ParticleSystem#ParticleSystem self (return value: cc.ParticleSystem)
         
 --------------------------------
@@ -631,6 +617,14 @@
 -- @param self
 -- @param #float sizeVar
 -- @return ParticleSystem#ParticleSystem self (return value: cc.ParticleSystem)
+        
+--------------------------------
+--  Add a particle to the emitter.<br>
+-- return True if add success.<br>
+-- js ctor
+-- @function [parent=#ParticleSystem] addParticle 
+-- @param self
+-- @return bool#bool ret (return value: bool)
         
 --------------------------------
 --  Gets the start radius.<br>

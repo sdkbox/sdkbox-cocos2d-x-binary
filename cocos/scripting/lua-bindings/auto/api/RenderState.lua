@@ -47,13 +47,6 @@
 -- @return RenderState::StateBlock#RenderState::StateBlock ret (return value: cc.RenderState::StateBlock)
         
 --------------------------------
--- 
--- @function [parent=#RenderState] setParent 
--- @param self
--- @param #cc.RenderState parent
--- @return RenderState#RenderState self (return value: cc.RenderState)
-        
---------------------------------
 -- Static initializer that is called during game startup.
 -- @function [parent=#RenderState] initialize 
 -- @param self

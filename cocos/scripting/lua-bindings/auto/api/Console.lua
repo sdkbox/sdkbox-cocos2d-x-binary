@@ -5,7 +5,7 @@
 -- @parent_module cc
 
 --------------------------------
---  starts listening to specified TCP port 
+--  starts listening to specifed TCP port 
 -- @function [parent=#Console] listenOnTCP 
 -- @param self
 -- @param #int port
@@ -33,7 +33,7 @@
 -- @return Console#Console self (return value: cc.Console)
         
 --------------------------------
---  starts listening to specified file descriptor 
+--  starts listening to specifed file descriptor 
 -- @function [parent=#Console] listenOnFileDescriptor 
 -- @param self
 -- @param #int fd

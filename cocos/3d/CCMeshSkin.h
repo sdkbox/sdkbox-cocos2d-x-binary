@@ -97,7 +97,7 @@ protected:
     std::vector<Mat4>  _invBindPoses; //inverse bind pose of bone
 
     Bone3D* _rootBone;
-    Skeleton3D*     _skeleton; //skeleton the skin referred
+    Skeleton3D*     _skeleton; //skeleton the skin refered
     
     // Pointer to the array of palette matrices.
     // This array is passed to the vertex shader as a uniform.

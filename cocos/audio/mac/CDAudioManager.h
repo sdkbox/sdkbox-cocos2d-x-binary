@@ -90,7 +90,7 @@ typedef enum {
  @since v0.99
  */
 @interface CDLongAudioSource : NSObject <AVAudioPlayerDelegate, CDAudioInterruptProtocol>{
-    CCAudioPlayer    *audioSourcePlayer;
+    AVAudioPlayer    *audioSourcePlayer;
     NSString        *audioSourceFilePath;
     NSInteger        numberOfLoops;
     float            volume;
@@ -106,7 +106,7 @@ typedef enum {
 @protected
     tLongAudioSourceState state;
 }    
-@property (readonly) CCAudioPlayer *audioSourcePlayer;
+@property (readonly) AVAudioPlayer *audioSourcePlayer;
 @property (readonly) NSString *audioSourceFilePath;
 @property (readwrite, nonatomic) NSInteger numberOfLoops;
 @property (readwrite, nonatomic) float volume;
@@ -196,13 +196,13 @@ typedef enum {
 /** Call if you want to use built in resign behavior but need to do some additional audio processing on become active. */
 - (void) applicationDidBecomeActive;
 
-//New CCAudioPlayer API
+//New AVAudioPlayer API
 /** Loads the data from the specified file path to the channel's audio source */
 -(CDLongAudioSource*) audioSourceLoad:(NSString*) filePath channel:(tAudioSourceChannel) channel;
 /** Retrieves the audio source for the specified channel */
 -(CDLongAudioSource*) audioSourceForChannel:(tAudioSourceChannel) channel;
 
-//Legacy CCAudioPlayer API
+//Legacy AVAudioPlayer API
 /** Plays music in background. The music can be looped or not
  It is recommended to use .aac files as background music since they are decoded by the device (hardware).
  */

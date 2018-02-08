@@ -44,7 +44,7 @@ NS_CC_BEGIN
 
 class Physics3DRigidBody;
 
-/** @brief Physics3DConstraint: Constraint affects the movement of physics object, it usually connect one or two physics object. There are some types of physics constraints. */
+/** @brief Physics3DConstraint: Constraint affects the movement of physics object, it usually connet one or two physics object. There are some types of physics constraints. */
 class CC_DLL Physics3DConstraint : public Ref
 {
 public:
@@ -184,7 +184,7 @@ CC_CONSTRUCTOR_ACCESS:
 
 /**
  * Hinge constraint restricts two additional angular degrees of freedom, so the body can only rotate around one axis, the hinge axis. This can be useful to represent doors or wheels rotating around one axis.
- * hinge constraint between two rigidbodies each with a pivotpoint that describes the axis location in local space
+ * hinge constraint between two rigidbodies each with a pivotpoint that descibes the axis location in local space
  */
 class CC_DLL Physics3DHingeConstraint : public Physics3DConstraint
 {
@@ -285,7 +285,7 @@ public:
     bool getAngularOnly() const;
     /**get enable angular motor*/
     bool getEnableAngularMotor() const;
-    /**get motor target velocity*/
+    /**get motor target velosity*/
     float getMotorTargetVelosity() const;
     /**get max motor impulse*/
     float getMaxMotorImpulse() const;
@@ -339,13 +339,13 @@ public:
     void setUpperLinLimit(float upperLimit);
     /**get lower angular limit*/
     float getLowerAngLimit() const;
-    /**set lower angular limit*/
+    /**set lower angualr limit*/
     void setLowerAngLimit(float lowerLimit);
-    /**get upper angular limit*/
+    /**get upper anglular limit*/
     float getUpperAngLimit() const;
-    /**set upper angular limit*/
+    /**set upper anglular limit*/
     void setUpperAngLimit(float upperLimit);
-    /**use A's frame as linear reference*/
+    /**use A's frame as linear refference*/
     bool getUseLinearReferenceFrameA() const;
     
     float getSoftnessDirLin() const;

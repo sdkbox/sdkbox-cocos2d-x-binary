@@ -14,7 +14,7 @@
 -- @return float#float ret (return value: float)
 
 --------------------------------
--- get motor target velocity
+-- get motor target velosity
 -- @function [parent=#Physics3DHingeConstraint] getMotorTargetVelosity 
 -- @param self
 -- @return float#float ret (return value: float)

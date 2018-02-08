@@ -31,7 +31,6 @@ endif
 
 LOCAL_SRC_FILES := ../../../../../prebuilt/android/$(TARGET_ARCH_ABI)/libluacocos2d.a
 
-#Component
 #3d
 
 #cocosdenshion

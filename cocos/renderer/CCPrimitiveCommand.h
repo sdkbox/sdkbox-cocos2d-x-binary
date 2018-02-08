@@ -69,11 +69,11 @@ public:
     inline GLuint getTextureID() const { return _textureID; }
     /**Get the glprogramstate used for drawing.*/
     inline GLProgramState* getGLProgramState() const { return _glProgramState; }
-    /**Get the blend function for drawing.*/
+    /**Get the blend funcion for drawing.*/
     inline BlendFunc getBlendType() const { return _blendType; }
-    /**Get the modelview matrix when draw the primitive.*/
+    /**Get the modelview matrix when draw the primtive.*/
     inline const Mat4& getModelView() const { return _mv; }
-    /**Execute and draw the command, called by renderer.*/
+    /**Execute and draw the commmand, called by renderer.*/
     void execute() const;
 protected:
     

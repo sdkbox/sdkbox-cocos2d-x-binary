@@ -105,8 +105,6 @@ private:
     HWND       _sysEdit;
     int        _maxTextLength;
 	*/
-    bool _isEditing;
-    static void onWin32InputBoxTextChange(const char *pText, EditBoxImplWin *thiz);
 };
 
 

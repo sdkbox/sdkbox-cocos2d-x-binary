@@ -4,7 +4,7 @@
 -- @parent_module ccexp
 
 --------------------------------
--- Default constructor<br>
+-- Defautl constructor<br>
 -- lua new
 -- @function [parent=#AudioProfile] AudioProfile 
 -- @param self

@@ -260,10 +260,7 @@ public:
     inline cocos2d::Point getAnchorPoint() const { return _anchorPoint; }
 
 protected:
-    virtual void onApply(float percent) override;
-
-    cocos2d::Vec2 _betweenAnchorPoint;
-    cocos2d::Vec2 _anchorPoint;
+    cocos2d::Point _anchorPoint;
 };
 
 

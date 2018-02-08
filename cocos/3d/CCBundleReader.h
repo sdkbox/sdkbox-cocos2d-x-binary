@@ -48,12 +48,12 @@ class BundleReader: public cocos2d::Ref
 {
 public:
     /**
-     * Constructor
+     * Structor
      */
     BundleReader();
     
     /**
-     * Destructor
+     * inicial
      */
     ~BundleReader();
     
@@ -163,7 +163,7 @@ inline bool BundleReader::readArray(unsigned int *length, std::vector<T> *values
 }
 
 /**
-* specialization for char
+* specalization for char
 */
 template<>
 inline bool BundleReader::read<char>(char *ptr)
@@ -180,7 +180,7 @@ inline bool BundleReader::read<char>(char *ptr)
 }
 
 /**
-* specialization for std::string
+* specalization for std::string
 */
 template<>
 inline bool BundleReader::read<std::string>(std::string *ptr)

@@ -151,7 +151,7 @@
         
 --------------------------------
 -- Query background image scale9 enable status.<br>
--- return Whether background image is scale9 enabled or not.
+-- return Whehter background image is scale9 enabled or not.
 -- @function [parent=#Layout] isBackGroundImageScale9Enabled 
 -- @param self
 -- @return bool#bool ret (return value: bool)
@@ -281,7 +281,7 @@
         
 --------------------------------
 -- Removes all children from the container, and do a cleanup to all running actions depending on the cleanup parameter.<br>
--- param cleanup   true if all running actions on all children nodes should be cleanup, false otherwise.<br>
+-- param cleanup   true if all running actions on all children nodes should be cleanup, false oterwise.<br>
 -- js removeAllChildren<br>
 -- lua removeAllChildren
 -- @function [parent=#Layout] removeAllChildrenWithCleanup 

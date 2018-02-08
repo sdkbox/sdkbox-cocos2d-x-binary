@@ -124,24 +124,24 @@ class JSCallbackWrapper: public cocos2d::Ref {
 public:
     JSCallbackWrapper();
     virtual ~JSCallbackWrapper();
-    void setJSCallbackFunc(JS::HandleValue callback);
-    void setJSCallbackThis(JS::HandleValue thisObj);
-    void setJSExtraData(JS::HandleValue data);
+    void setJSCallbackFunc(jsval obj);
+    void setJSCallbackThis(jsval thisObj);
+    void setJSExtraData(jsval data);
     
-    const jsval getJSCallbackFunc() const;
-    const jsval getJSCallbackThis() const;
-    const jsval getJSExtraData() const;
+    const jsval& getJSCallbackFunc() const;
+    const jsval& getJSCallbackThis() const;
+    const jsval& getJSExtraData() const;
 protected:
-    mozilla::Maybe<JS::PersistentRootedValue> _jsCallback;
-    mozilla::Maybe<JS::PersistentRootedValue> _jsThisObj;
-    mozilla::Maybe<JS::PersistentRootedValue> _extraData;
+    JS::Heap<JS::Value> _jsCallback;
+    JS::Heap<JS::Value> _jsThisObj;
+    JS::Heap<JS::Value> _extraData;
 };
 
 
 class JSScheduleWrapper: public JSCallbackWrapper {
     
 public:
-    JSScheduleWrapper();
+    JSScheduleWrapper() : _pTarget(NULL), _pPureJSTarget(NULL), _priority(0), _isUpdateSchedule(false) {}
     virtual ~JSScheduleWrapper();
 
     static void setTargetForSchedule(JS::HandleValue sched, JSScheduleWrapper *target);
@@ -178,7 +178,7 @@ public:
     
 protected:
     Ref* _pTarget;
-    mozilla::Maybe<JS::PersistentRootedObject> _pPureJSTarget;
+    JS::Heap<JSObject*> _pPureJSTarget;
     int _priority;
     bool _isUpdateSchedule;
 };
@@ -197,7 +197,7 @@ public:
     // Remove the delegate by the key (pJSObj).
     static void removeDelegateForJSObject(JSObject* pJSObj);
 
-    void setJSObject(JS::HandleObject obj);
+    void setJSObject(JSObject *obj);
     void registerStandardDelegate(int priority);
     void registerTargetedDelegate(int priority, bool swallowsTouches);
     // unregister touch delegate.
@@ -217,7 +217,7 @@ public:
     void onTouchesCancelled(const std::vector<cocos2d::Touch*>& touches, cocos2d::Event *event);
 
 private:
-    mozilla::Maybe<JS::PersistentRootedObject> _obj;
+    JS::Heap<JSObject*> _obj;
     typedef std::unordered_map<JSObject*, JSTouchDelegate*> TouchDelegateMap;
     typedef std::pair<JSObject*, JSTouchDelegate*> TouchDelegatePair;
     static TouchDelegateMap sTouchDelegateMap;

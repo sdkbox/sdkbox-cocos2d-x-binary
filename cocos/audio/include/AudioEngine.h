@@ -66,7 +66,7 @@ public:
     double minDelay;
     
     /**
-     * Default constructor
+     * Defautl constructor
      *
      * @lua new
      */

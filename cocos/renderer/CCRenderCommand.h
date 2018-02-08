@@ -80,7 +80,7 @@ public:
     /** Returns the Command type. */
     inline Type getType() const { return _type; }
     
-    /** Returns whether is transparent. */
+    /** Retruns whether is transparent. */
     inline bool isTransparent() const { return _isTransparent; }
     
     /** Set transparent flag. */
@@ -101,7 +101,7 @@ public:
 protected:
     /**Constructor.*/
     RenderCommand();
-    /**Destructor.*/
+    /**Desctructor.*/
     virtual ~RenderCommand();
     //used for debug but it is not implemented.
     void printID();

@@ -41,32 +41,35 @@ protected:
     /**
      * @js ctor
      */
-    ComponentContainer(Node* node);
+    ComponentContainer(Node *pNode);
     
 public:
     /**
      * @js NA
      * @lua NA
      */
-    ~ComponentContainer();
-    
+    virtual ~ComponentContainer(void);
 	/**
      * @js getComponent
      */
-	Component* get(const std::string& name) const;
-
-    bool add(Component *com);
-    bool remove(const std::string& name);
-    bool remove(Component *com);
-    void removeAll();
-    void visit(float delta);
+	virtual Component* get(const std::string& name) const;
+    virtual bool add(Component *com);
+    virtual bool remove(const std::string& name);
+    virtual bool remove(Component *com);
+    virtual void removeAll();
+    virtual void visit(float delta);
     
-    void onEnter();
-    void onExit();
+    virtual void onEnter();
+    virtual void onExit();
     
-    bool isEmpty() const { return _componentMap.empty(); } 
+public:
+    bool isEmpty() const;
+    
 private:
-    std::unordered_map<std::string, Component*> _componentMap;
+    void alloc(void);
+    
+private:
+    Map<std::string, Component*>* _components;
     Node *_owner;
     
     friend class Node;

@@ -111,6 +111,7 @@ private:
     cocos2d::CustomCommand         _batchBoneCommand;
 
     void batchDrawAllSubBones(const cocos2d::Mat4 &transform);
+    void batchSubBone(BoneNode* bone);
 };
 
 NS_TIMELINE_END

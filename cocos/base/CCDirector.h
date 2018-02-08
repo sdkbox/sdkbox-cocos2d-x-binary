@@ -97,9 +97,7 @@ class CC_DLL Director : public Ref
 {
 public:
     /** Director will trigger an event when projection type is changed. */
-    static const char* EVENT_PROJECTION_CHANGED;
-    /** Director will trigger an event before Schedule::update() is invoked. */
-    static const char* EVENT_BEFORE_UPDATE;
+    static const char *EVENT_PROJECTION_CHANGED;
     /** Director will trigger an event after Schedule::update() is invoked. */
     static const char* EVENT_AFTER_UPDATE;
     /** Director will trigger an event after Scene::render() is invoked. */
@@ -156,12 +154,12 @@ public:
 
     /** Gets the FPS value. */
     inline float getAnimationInterval() { return _animationInterval; }
-    /** Sets the FPS value. FPS = 1/interval. */
+    /** Sets the FPS value. FPS = 1/internal. */
     virtual void setAnimationInterval(float interval) = 0;
 
-    /** Whether or not displaying the FPS on the bottom-left corner of the screen. */
+    /** Whether or not to display the FPS on the bottom-left corner. */
     inline bool isDisplayStats() { return _displayStats; }
-    /** Display the FPS on the bottom-left corner of the screen. */
+    /** Display the FPS on the bottom-left corner. */
     inline void setDisplayStats(bool displayStats) { _displayStats = displayStats; }
     
     /** Get seconds per frame. */
@@ -187,8 +185,8 @@ public:
     /** Whether or not `_nextDeltaTimeZero` is set to 0. */
     inline bool isNextDeltaTimeZero() { return _nextDeltaTimeZero; }
     /** 
-     * Sets the delta time between current frame and next frame is 0.
-     * This value will be used in Schedule, and will affect all functions that are using frame delta time, such as Actions.
+     * Sets the detal time between current frame and next frame is 0.
+     * This value will be used in Schedule, and will affect all functions that are using frame detal time, such as Actions.
      * This value will take effect only one time.
      */
     void setNextDeltaTimeZero(bool nextDeltaTimeZero);
@@ -262,8 +260,8 @@ public:
     Vec2 convertToUI(const Vec2& point);
 
     /** 
-     * Gets the distance between camera and near clipping frame.
-     * It is correct for default camera that near clipping frame is same as the screen.
+     * Gets the distance between camera and near clipping frane.
+     * It is correct for default camera that near clipping frane is the same as screen.
      */
     float getZEye() const;
 
@@ -460,7 +458,7 @@ public:
      * @js NA
      */
     void popMatrix(MATRIX_STACK_TYPE type);
-    /** Adds an identity matrix to the top of specified type of matrix stack.
+    /** Adds an identity matrix to the top of specified type of matrxi stack.
      * @js NA
      */
     void loadIdentityMatrix(MATRIX_STACK_TYPE type);
@@ -473,10 +471,10 @@ public:
      */
     void loadMatrix(MATRIX_STACK_TYPE type, const Mat4& mat);
     /**
-     * Multiplies a matrix to the top of specified type of matrix stack.
+     * Multipies a matrix to the top of specified type of matrix stack.
      *
      * @param type Matrix type.
-     * @param mat The matrix that to be multiplied.
+     * @param mat The matrix that to be multipied.
      * @js NA
      */
     void multiplyMatrix(MATRIX_STACK_TYPE type, const Mat4& mat);
@@ -486,7 +484,7 @@ public:
      */
     const Mat4& getMatrix(MATRIX_STACK_TYPE type);
     /**
-     * Clear all types of matrix stack, and add identity matrix to these matrix stacks.
+     * Cleras all types of matrix stack, and add indentity matrix to these matrix stacks.
      * @js NA
      */
     void resetMatrixStack();
@@ -540,7 +538,7 @@ protected:
      @since v3.0
      */
     EventDispatcher* _eventDispatcher;
-    EventCustom *_eventProjectionChanged, *_eventAfterDraw, *_eventAfterVisit, *_eventBeforeUpdate, *_eventAfterUpdate;
+    EventCustom *_eventProjectionChanged, *_eventAfterDraw, *_eventAfterVisit, *_eventAfterUpdate;
         
     /* delta time since last tick to main loop */
 	float _deltaTime;

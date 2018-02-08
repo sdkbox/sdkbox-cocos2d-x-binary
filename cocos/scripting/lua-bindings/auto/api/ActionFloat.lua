@@ -31,7 +31,7 @@
 -- @return ActionFloat#ActionFloat ret (return value: cc.ActionFloat)
         
 --------------------------------
--- Overridden ActionInterval methods
+-- Overrided ActionInterval methods
 -- @function [parent=#ActionFloat] startWithTarget 
 -- @param self
 -- @param #cc.Node target

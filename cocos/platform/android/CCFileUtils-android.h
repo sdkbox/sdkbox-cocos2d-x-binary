@@ -58,7 +58,7 @@ public:
     static void setassetmanager(AAssetManager* a);
     static AAssetManager* getAssetManager() { return assetmanager; }
 
-    /* override functions */
+    /* override funtions */
     bool init();
 
     virtual std::string getNewFilename(const std::string &filename) const override;

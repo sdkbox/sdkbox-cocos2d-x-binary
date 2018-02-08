@@ -76,7 +76,7 @@ namespace experimental{
             virtual void setFileName(const std::string& videoPath);
             
             /**
-             * @brief Get the local video file name.
+             * @brief Get the local video filie name.
              *
              * @return The video file name.
              */

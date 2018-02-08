@@ -62,7 +62,7 @@
 -- @return NavMeshAgent#NavMeshAgent self (return value: cc.NavMeshAgent)
         
 --------------------------------
---  pause movement 
+--  puase movement 
 -- @function [parent=#NavMeshAgent] pause 
 -- @param self
 -- @return NavMeshAgent#NavMeshAgent self (return value: cc.NavMeshAgent)

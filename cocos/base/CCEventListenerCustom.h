@@ -46,7 +46,7 @@ class EventCustom;
  *        auto listener = EventListenerCustom::create(callback);
  *        dispatcher->addEventListenerWithSceneGraphPriority(listener, one_node);
  *
- *     Dispatches a custom event:
+ *     Dispatchs a custom event:
  *
  *        EventCustom event("your_event_type");
  *        dispatcher->dispatchEvent(&event);

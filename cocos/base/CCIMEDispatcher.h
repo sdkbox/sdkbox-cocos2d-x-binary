@@ -110,7 +110,7 @@ protected:
     bool attachDelegateWithIME(IMEDelegate * delegate);
 
     /**
-     * Detach the delegate to the IME
+     * Dettach the delegate to the IME
      *@see `attachDelegateWithIME(IMEDelegate*)`
      *@param delegate  A instance implements IMEDelegate delegate.
      *@return Whether the IME is detached or not.

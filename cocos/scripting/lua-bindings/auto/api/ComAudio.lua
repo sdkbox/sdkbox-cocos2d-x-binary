@@ -193,10 +193,10 @@
 -- @return Ref#Ref ret (return value: cc.Ref)
         
 --------------------------------
--- js NA<br>
--- lua NA
--- @function [parent=#ComAudio] onRemove 
+-- 
+-- @function [parent=#ComAudio] setEnabled 
 -- @param self
+-- @param #bool b
 -- @return ComAudio#ComAudio self (return value: ccs.ComAudio)
         
 --------------------------------
@@ -205,6 +205,19 @@
 -- @param self
 -- @param #void r
 -- @return bool#bool ret (return value: bool)
+        
+--------------------------------
+-- 
+-- @function [parent=#ComAudio] isEnabled 
+-- @param self
+-- @return bool#bool ret (return value: bool)
+        
+--------------------------------
+-- js NA<br>
+-- lua NA
+-- @function [parent=#ComAudio] onRemove 
+-- @param self
+-- @return ComAudio#ComAudio self (return value: ccs.ComAudio)
         
 --------------------------------
 -- 

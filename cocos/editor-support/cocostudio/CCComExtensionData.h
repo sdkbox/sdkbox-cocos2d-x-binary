@@ -44,8 +44,6 @@ namespace cocostudio
     {
         DECLARE_CLASS_COMPONENT_INFO
     public:
-        const static std::string COMPONENT_NAME;
-
         /**
         * @js NA
         * @lua NA

@@ -26,9 +26,6 @@
 #define HTTP_COOKIE_H
 /// @cond DO_NOT_SHOW
 
-#include <string>
-#include <vector>
-
 struct CookiesInfo
 {
     std::string domain;

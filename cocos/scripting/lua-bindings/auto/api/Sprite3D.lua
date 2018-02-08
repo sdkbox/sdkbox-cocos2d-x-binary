@@ -116,12 +116,6 @@
 -- @return Sprite3D#Sprite3D self (return value: cc.Sprite3D)
         
 --------------------------------
--- generate default material
--- @function [parent=#Sprite3D] genMaterial 
--- @param self
--- @return Sprite3D#Sprite3D self (return value: cc.Sprite3D)
-        
---------------------------------
 -- remove attach node
 -- @function [parent=#Sprite3D] removeAttachNode 
 -- @param self
@@ -178,7 +172,7 @@
 -- @return Action#Action ret (return value: cc.Action)
         
 --------------------------------
---  just remember bind attributes 
+--  just rember bind attributes 
 -- @function [parent=#Sprite3D] setGLProgram 
 -- @param self
 -- @param #cc.GLProgram glprogram
@@ -186,7 +180,7 @@
         
 --------------------------------
 -- Returns 2d bounding-box<br>
--- Note: the bounding-box is just get from the AABB which as Z=0, so that is not very accurate.
+-- Note: the bouding-box is just get from the AABB which as Z=0, so that is not very accurate.
 -- @function [parent=#Sprite3D] getBoundingBox 
 -- @param self
 -- @return rect_table#rect_table ret (return value: rect_table)

@@ -45,7 +45,7 @@ class CC_DLL TextFieldDelegate
 {
 public:
     /**
-     * Destructor for TextFieldDelegate.
+     * Desctructor for TextFieldDelegate.
      * @js NA
      */
     virtual ~TextFieldDelegate() {}
@@ -159,7 +159,7 @@ public:
     inline void setDelegate(TextFieldDelegate* delegate) { _delegate = delegate; };
 
     /**
-     * Query the currently inputed character count.
+     * Query the currently inputed charater count.
      *@return The total input character count.
      */
     inline int getCharCount() const { return _charCount; };
@@ -214,7 +214,7 @@ public:
     virtual const std::string& getPlaceHolder() const;
 
     /**
-     * Set enable secure text entry representation.
+     * Set enable secure text entry represention.
      * If you want to display password in TextField, this option is very helpful.
      *@param value Whether or not to display text with secure text entry.
      * @js NA
