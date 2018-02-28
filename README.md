@@ -10,7 +10,7 @@ cd samples
 git clone --depth 1 https://github.com/sdkbox/sdkbox-cocos2d-x-binary.git
 
 # unzip the iOS lib
-unzip prebuilt/ios/Archive.zip -d prebuilt/ios/
+unzip -o prebuilt/ios/Archive.zip -d prebuilt/ios/
 
 # create facebook sample
 ./sdkbox-cocos2d-x-binary/create_project.sh facebook

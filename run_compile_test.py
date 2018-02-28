@@ -25,6 +25,9 @@ def main(argv):
     platforms = ['ios', 'android']
     langs = ['cpp', 'js', 'lua']
 
+    #
+    _run_cmd('unzip -o prebuilt/ios/Archive.zip -d prebuilt/ios/', get_curr_path())
+
     sample_path = get_sample_path(plugin)
     # clean
     _run_cmd('git checkout -f && git clean -dxf', sample_path)
