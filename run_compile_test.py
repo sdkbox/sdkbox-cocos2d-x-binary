@@ -20,19 +20,6 @@ def get_curr_path():
 def get_sample_path(plugin):
     return os.path.join(get_curr_path(), '..', 'sdkbox-sample-'+plugin)
 
-def build(plugin, lang, platform):
-    try:
-        _run_cmd('cocos compile -p %s -q' % platform, os.path.join(get_sample_path(plugin), lang))
-    except subprocess.CalledProcessError as e:
-        print '# build project for ' + platform + ' Failed. plugin: ' + plugin + ' lang: ' + lang + ' command: ' + ' '.join(e.cmd)
-        return 1
-    except Exception as e:
-        print '# build project for ' + platform + ' Failed. plugin: ' + plugin + ' lang: ' + lang + ' error: ' + str(e)
-        return 1
-
-    print '# build project for ' + platform + ' SUCCESS. plugin: ' + plugin + ' lang: ' + lang
-    return 0
-
 def main(argv):
     plugin = argv[0]
     platforms = ['ios', 'android']
@@ -49,8 +36,8 @@ def main(argv):
 
         # compile
         if plugin != 'playphone':
-            _run_cmd('cocos compile -p ios -q', project_path)
-        _run_cmd('cocos compile -p android -q', project_path)
+            _run_cmd('cocos compile -p ios', project_path)
+        _run_cmd('cocos compile -p android', project_path)
 
 
 if __name__ == "__main__":
